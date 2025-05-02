@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\GithubController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
@@ -43,6 +44,9 @@ Route::get('/auth/google/callback', [GoogleAuthController::class, 'callback'])->
 
 Route::get('login/facebook', [FacebookController::class, 'redirectToFacebook'])->name('login.facebook');
 Route::get('login/facebook/callback', [FacebookController::class, 'handleFacebookCallback']);
+
+Route::get('auth/github', [GitHubController::class, 'redirectToGitHub']);
+Route::get('auth/github/callback', [GitHubController::class, 'handleGitHubCallback']);
 
 
 require __DIR__.'/auth.php';

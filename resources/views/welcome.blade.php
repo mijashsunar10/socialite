@@ -13,6 +13,10 @@
     <a href="{{ route('login.facebook') }}" class="btn btn-primary">
         Login with Facebook
     </a>
+    <a href="{{ url('auth/github') }}">
+        <button class="btn btn-dark">Login with GitHub</button>
+    </a>
+    
     @if(session('error'))
     <div class="alert alert-danger">
         {{ session('error') }}
