@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
@@ -37,5 +38,11 @@ Route::get('/auth/google/redirect', [GoogleAuthController::class, 'redirect'])->
 
 // Route to handle the callback from Google
 Route::get('/auth/google/callback', [GoogleAuthController::class, 'callback'])->name('auth.google.callback');
+
+
+
+Route::get('login/facebook', [FacebookController::class, 'redirectToFacebook'])->name('login.facebook');
+Route::get('login/facebook/callback', [FacebookController::class, 'handleFacebookCallback']);
+
 
 require __DIR__.'/auth.php';
